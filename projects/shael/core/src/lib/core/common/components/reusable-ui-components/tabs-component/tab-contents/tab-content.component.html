@@ -1,0 +1,6 @@
+<div *ngIf="active">
+  <ng-container *ngTemplateOutlet="content ? content : default"></ng-container>
+  <ng-template #default>
+    <ng-content></ng-content>
+  </ng-template>
+</div>
