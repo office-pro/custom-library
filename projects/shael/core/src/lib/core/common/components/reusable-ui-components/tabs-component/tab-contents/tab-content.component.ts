@@ -1,11 +1,24 @@
 import { Component, OnInit, Input, TemplateRef } from '@angular/core';
 
+/**
+ * @license
+ * Copyright Shael Library Inc. All Rights Reserved.
+ * @author Shashikant Mittapelli(shaelm29@gmail.com)
+ * 
+ * Used for adding content in tabs
+ */
+
 @Component({
   selector: 'tab-content',
-  templateUrl: './tab-content.component.html',
-  styleUrls: ['./tab-content.component.css']
+  template: `
+  <div *ngIf="active">
+    <ng-container *ngTemplateOutlet="content ? content : default"></ng-container>
+    <ng-template #default>
+      <ng-content></ng-content>
+    </ng-template>
+  </div>`
 })
-export class TabContentComponent implements OnInit {
+export class TabContentComponent{
 
   @Input()
   label:string;
@@ -17,9 +30,4 @@ export class TabContentComponent implements OnInit {
 
   @Input()
   content:TemplateRef<any>;
-
-  constructor() { }
-
-  ngOnInit() {}
-
 }

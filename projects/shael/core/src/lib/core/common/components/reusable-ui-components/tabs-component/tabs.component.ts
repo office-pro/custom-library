@@ -1,21 +1,25 @@
-import { Component, OnInit, ContentChildren, ViewChildren, QueryList } from '@angular/core';
+import { Component, ContentChildren, QueryList } from '@angular/core';
 import { TabContentComponent } from './tab-contents/tab-content.component';
+
+/**
+ * @license
+ * Copyright Shael Library Inc. All Rights Reserved.
+ * @author Shashikant Mittapelli(shaelm29@gmail.com)
+ * 
+ * Used for generating tab-content for tabs
+ * 
+ */
 
 @Component({
   selector: 'tabs',
   templateUrl: './tabs.component.html',
   styleUrls: ['./tabs.component.css']
 })
-export class TabsComponent implements OnInit {
+export class TabsComponent {
   
   @ContentChildren(TabContentComponent)
   tabs:QueryList<TabContentComponent>;
-  
-  constructor() { }
-  
-  ngOnInit() {
-  }
-  
+
   setCurrentTabActive(tab?:TabContentComponent){
     if(this.tabs && this.tabs.length > 0){
       this.resetTab()
@@ -36,7 +40,6 @@ export class TabsComponent implements OnInit {
   
   ngAfterViewInit(){
     this.setCurrentTabActive();
-    console.log(this.tabs)
   }
 
 }
