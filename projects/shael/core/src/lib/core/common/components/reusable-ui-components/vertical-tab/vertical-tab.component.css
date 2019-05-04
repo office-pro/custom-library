@@ -1,0 +1,49 @@
+
+.tab{
+    background-color: #f1f1f1;
+    display: flex;
+}
+.tab-header{
+    width: 25%;
+    float: left;
+    display: inline-block;
+}
+.tab-content{
+    width:75%;
+    display: inline-block;
+    padding: 1rem;
+    font-family: 'Times New Roman', Times, serif;
+    border-right: 2px solid white;
+    font-size: 18px;
+}
+ul li.active {
+    background-color: #ccc;
+  }
+
+.tab-content div{
+    display: inline-block;   
+}
+
+/* commonly used css */
+ul.tab-header-names{
+    list-style-type: none !important;
+    padding: 0;
+    margin: 0;
+  }
+  
+  ul li{
+    background-color: inherit;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+  }
+  
+  ul li:hover {
+      background-color: #ddd;
+    }
+/* commonly used css */
+
+  
